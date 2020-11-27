@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
+import {IPost} from "../../shared/interfaces/post";
 import {PostService} from "../post.service";
-import {IPost} from "../interfaces/post";
 
 @Component({
-  selector: 'app-aside',
-  templateUrl: './aside.component.html',
-  styleUrls: ['./aside.component.css']
+  selector: 'app-post-list',
+  templateUrl: './post-list.component.html',
+  styleUrls: ['./post-list.component.css']
 })
-export class AsideComponent implements OnInit {
+export class PostListComponent implements OnInit {
 
   postList: IPost[];
 
@@ -19,5 +19,4 @@ export class AsideComponent implements OnInit {
       this.postList = postList;
     });
   }
-
 }

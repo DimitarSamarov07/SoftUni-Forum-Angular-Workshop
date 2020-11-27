@@ -18,10 +18,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  loginHandler(): void {
-    this.userService.login();
-  }
-
   logoutHandler(): void {
     this.userService.logout();
   }

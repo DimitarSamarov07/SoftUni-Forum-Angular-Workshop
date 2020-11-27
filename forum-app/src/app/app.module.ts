@@ -2,43 +2,43 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {HeaderComponent} from './header/header.component';
-import {FooterComponent} from './footer/footer.component';
-import {ThemeListComponent} from './theme-list/theme-list.component';
-import {AsideComponent} from './aside/aside.component';
-import {UserService} from "./user.service";
-import {storageServiceProvider} from "./storage.service";
+import {HeaderComponent} from './core/header/header.component';
+import {FooterComponent} from './core/footer/footer.component';
+import {UserService} from "./core/user.service";
 import {HttpClientModule} from "@angular/common/http";
-import {ThemeListItemComponent} from './theme-list-item/theme-list-item.component';
-import {ThemeService} from "./theme.service";
-import {PostListComponent} from './post-list/post-list.component';
-import {PostService} from "./post.service";
+import {HomeComponent} from './home/home.component';
+import {RouterModule} from "@angular/router";
+import {AppRoutingModule} from "./app-routing.module";
+import {CoreModule} from "./core/core.module";
+import {PostModule} from "./post/post.module";
+import {ThemeModule} from "./theme/theme.module";
+import {UserModule} from "./user/user.module";
+import {NotFoundComponent} from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    ThemeListComponent,
-    AsideComponent,
-    ThemeListItemComponent,
-    PostListComponent
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
+    CoreModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    AppRoutingModule,
+    PostModule,
+    ThemeModule,
+    UserModule
   ],
   providers: [
     UserService,
-    storageServiceProvider,
-    HttpClientModule,
-    ThemeService,
-    PostService]
-  ,
+  ],
   bootstrap: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent,
   ]
 })
 export class AppModule {

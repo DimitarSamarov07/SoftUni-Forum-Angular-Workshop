@@ -1,4 +1,4 @@
-<div *ngIf="themeList">
+<div *ngIf="themeList" class="div-expand">
   <div class="theme-title">
     <app-theme-list-item *ngFor="let theme of themeList" [theme]="theme"></app-theme-list-item>
     <div *ngIf="themeList.length === 0">No Themes!</div>
