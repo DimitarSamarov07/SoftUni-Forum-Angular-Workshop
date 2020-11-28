@@ -6,17 +6,23 @@ import {PostModule} from "../post/post.module";
 import {ThemeService} from "./theme.service";
 import {NgModule} from "@angular/core";
 import {NewThemeComponent} from './new-theme/new-theme.component';
+import {ThemeRouterModule} from "./theme-routing.module";
+import {DetailComponent} from './detail/detail.component';
+import {CoreModule} from "../core/core.module";
 
 @NgModule({
   declarations: [
     ThemeListComponent,
     ThemeListItemComponent,
     NewThemeComponent,
+    DetailComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
+    ThemeRouterModule,
     PostModule,
+    CoreModule
   ],
   providers: [
     ThemeService,
@@ -26,8 +32,8 @@ import {NewThemeComponent} from './new-theme/new-theme.component';
   ],
   exports: [
     ThemeListComponent,
-    ThemeListItemComponent
-  ]
+    ThemeListItemComponent,
+  ],
 })
 
 export class ThemeModule {

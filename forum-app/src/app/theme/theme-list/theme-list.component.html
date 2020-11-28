@@ -1,10 +1,18 @@
-<div *ngIf="themeList" class="div-expand">
-  <div class="theme-title">
-    <app-theme-list-item *ngFor="let theme of themeList" [theme]="theme"></app-theme-list-item>
-    <div *ngIf="themeList.length === 0">No Themes!</div>
+<div class="container">
+  <div *ngIf="themeList" class="div-expand">
+    <div class="theme-title">
+      <app-theme-list-item *ngFor="let theme of themeList" [theme]="theme"></app-theme-list-item>
+      <div *ngIf="themeList.length === 0">No Themes!</div>
+    </div>
   </div>
+  <div *ngIf="!themeList">
+    Loading...
+  </div>
+  <aside>
+    <app-aside title="Recent posts">
+      <app-post-list></app-post-list>
+    </app-aside>
+  </aside>
 </div>
-<div *ngIf="!themeList">
-  Loading...
-</div>
+
 

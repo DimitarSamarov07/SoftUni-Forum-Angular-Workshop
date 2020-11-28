@@ -6,6 +6,7 @@ import {RegisterComponent} from './register/register.component';
 import {ProfileComponent} from "./profile/profile.component";
 import {UserRoutingModule} from "./user-routing.module";
 import {SharedModule} from "../shared/shared.module";
+import {AuthGuard} from "../core/guards/auth.guard";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {SharedModule} from "../shared/shared.module";
     SharedModule
   ],
   providers: [
-    UserService
+    UserService,
+    AuthGuard
   ]
 })
 export class UserModule {

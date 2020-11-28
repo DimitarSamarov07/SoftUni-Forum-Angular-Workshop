@@ -1,0 +1,34 @@
+<div class="new-theme-border">
+  <div class="header-background">
+    <span>New Theme</span>
+  </div>
+  <form>
+    <div class="new-theme-title">
+      <label for="themeName">Title <span class="red">*</span></label>
+      <input #themeName type="text" name="themeName" id="themeName"
+             (keyup)="updateInputValue('title', themeName.value)">
+      <p class="error" *ngIf="showTitleEmptyErr">
+        Theme name is required.
+      </p>
+      <p class="error" *ngIf="showTitleTooShortErr">
+        Theme name must be at least 5 characters long.
+      </p>
+    </div>
+    <div class="new-theme-content">
+      <label for="postText">Post <span class="red">*</span></label>
+      <textarea #postText type="text" name="postText" id="postText" rows="8" class="height"
+                (keyup)="updateInputValue('post', postText.value)"></textarea>
+      <p class="error" *ngIf="showPostEmptyErr">
+        The field with your post is required.
+      </p>
+      <p class="error" *ngIf="showPostTooShortErr">
+        Post must be at least 10 characters long.
+      </p>
+    </div>
+    <div class="new-theme-buttons">
+      <button class="cancel" type="reset" routerLink="/">Cancel</button>
+      <button class="public" type="button" (click)="createNewTheme(themeName.value, postText.value)">Post</button>
+    </div>
+
+  </form>
+</div>
